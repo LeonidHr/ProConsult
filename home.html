@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230223170249">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230223180105">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230223170249" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230223180105" rel="stylesheet">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -27,10 +27,10 @@
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item"><a href="home.html" class="menu__link">Главная</a></li>
-							<li class="menu__item"><a href="home.html" class="menu__link">О Нас</a></li>
-							<li class="menu__item"><a href="home.html" class="menu__link">Консультации</a></li>
-							<li class="menu__item"><a href="home.html" class="menu__link">Почему мы</a></li>
-							<li class="menu__item"><a href="home.html" class="menu__link">Партнерам</a></li>
+							<li class="menu__item"><button type="button" data-popup="#popup-about" class="menu__link">О Нас</button></li>
+							<li class="menu__item"><a href="#" class="menu__link">Консультации</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Почему мы</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Партнерам</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -61,12 +61,12 @@
 					</h2>
 					<p class="mainscreen__text">Быстро, удобно и качественно.</p>
 				</div>
-				<a href="#" class="mainscreen__btn-main">
+				<button data-popup="#popup-about" class="mainscreen__btn-main">
 					<div class="mainscreen__arrow">
 						<img src="img/icons/arrow-down-w.svg" alt="Белая стрелка">
 					</div>
 					<span>О нас</span>
-				</a>
+				</button>
 			</section>
 		</main>
 		<footer class="footer">
@@ -74,7 +74,37 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230223170249"></script>
+	<div id="popup-about" aria-hidden="true" class="popup popup-about">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img class="img-fluid" src="img/icons/exit.svg" alt="Закрыть окно">
+				</button>
+				<div class="popup-about__content">
+					<h3 class="popup__title popup__title_left popup-about__title">О нас</h3>
+					<div class="popup-about__text text">
+						<p>
+							Pro estate - это ваш надежный партнер на рынке недвижимости. Своим клиентам мы помогаем в сделках по покупке-продаже, аренде недвижимого имущество. Наш опыт, который мы получали работая с недвижимостью и закрывая сделки разной сложности, индивидуальный подход к каждому клиенту учитывая его пожелания и специфику сделки, внимание к мелочам, которые чаще всего могут вызвать сложности или проблемы при/после оформления сделки, полное юридическое сопровождение, невысокие цены на весь спектр услуг - все это делает наше предложение уникальным и конкурентоспособным. Все услуги мы предоставляем под ключ с пост оплатой. Постоянно отслеживаем все нововведения на рынке, так как сами имеем в собственности свою недвижимость и непрерывно обслуживаем объекты наших клиентов. Компетентность и знание своего дела, это наша сильная сторона. Не доверяйте свою недвижимость "маклерам-риелторам", которые за свои высокие комиссии даже не могут правильно составить юридические документы, называя их "бумажками"
+						</p>
+						<p>
+							Более детально все наши услуги расписаны на сайте. Мы будем рады сотрудничеству на регулярной основе. По всем вопросам обращайтесь пожалуйста, у нас бесплатные консультации для всех клиентов. Контактный телефон указан на сайте.
+						</p>
+						<p>Благодарим за внимание.</p>
+					</div>
+					<div class="popup-about__logo">
+						<img class="img-fluid" src="img/logo.svg" alt="ProConsult logo">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<script src="js/app.min.js?_v=20230223180105"></script>
 </body>
 
 </html>

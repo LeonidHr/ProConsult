@@ -112,7 +112,7 @@
 			height: 100vh;
 			background-color: #fff;
 			z-index: 4;
-			padding: rem(115) 0 rem(30) 0;
+			padding: rem(115) 0 rem(40) 0;
 			overflow: auto;
 			top: -100vh;
 			transition: all 0.3s ease 0s;
@@ -120,8 +120,24 @@
 			flex-direction: column;
 			align-items: center;
 
+			&::before{
+				content:'';
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: rem(76);
+				background-color: #fff;
+				z-index: 2;
+				visibility: hidden;
+			}
+
 			.menu-open & {
 				top: 0;
+			
+				&::before{
+					visibility: visible;
+				}
 			}
 		}
 	}

@@ -534,7 +534,11 @@
                 }
             }));
         }
-        function functions_FLS(message) {
+        function functions_menuClose() {
+            bodyUnlock();
+            document.documentElement.classList.remove("menu-open");
+        }
+        function FLS(message) {
             setTimeout((() => {
                 if (window.FLS) console.log(message);
             }), 0);
@@ -781,10 +785,106 @@
                 if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else focusable[0].focus();
             }
             popupLogging(message) {
-                this.options.logging ? functions_FLS(`[Попапос]: ${message}`) : null;
+                this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
             }
         }
         modules_flsModules.popup = new Popup({});
+        let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+            const targetBlockElement = document.querySelector(targetBlock);
+            if (targetBlockElement) {
+                let headerItem = "";
+                let headerItemHeight = 0;
+                if (noHeader) {
+                    headerItem = "header.header";
+                    const headerElement = document.querySelector(headerItem);
+                    if (!headerElement.classList.contains("_header-scroll")) {
+                        headerElement.style.cssText = `transition-duration: 0s;`;
+                        headerElement.classList.add("_header-scroll");
+                        headerItemHeight = headerElement.offsetHeight;
+                        headerElement.classList.remove("_header-scroll");
+                        setTimeout((() => {
+                            headerElement.style.cssText = ``;
+                        }), 0);
+                    } else headerItemHeight = headerElement.offsetHeight;
+                }
+                let options = {
+                    speedAsDuration: true,
+                    speed,
+                    header: headerItem,
+                    offset: offsetTop,
+                    easing: "easeOutQuad"
+                };
+                document.documentElement.classList.contains("menu-open") ? functions_menuClose() : null;
+                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else {
+                    let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+                    targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+                    targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+                    window.scrollTo({
+                        top: targetBlockElementPosition,
+                        behavior: "smooth"
+                    });
+                }
+                FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
+            } else FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
+        };
+        function formFieldsInit(options = {
+            viewPass: false,
+            autoHeight: false
+        }) {
+            const formFields = document.querySelectorAll("input[placeholder],textarea[placeholder]");
+            if (formFields.length) formFields.forEach((formField => {
+                if (!formField.hasAttribute("data-placeholder-nohide")) formField.dataset.placeholder = formField.placeholder;
+            }));
+            document.body.addEventListener("focusin", (function(e) {
+                const targetElement = e.target;
+                if ("INPUT" === targetElement.tagName || "TEXTAREA" === targetElement.tagName) {
+                    if (targetElement.dataset.placeholder) targetElement.placeholder = "";
+                    if (!targetElement.hasAttribute("data-no-focus-classes")) {
+                        targetElement.classList.add("_form-focus");
+                        targetElement.parentElement.classList.add("_form-focus");
+                    }
+                    formValidate.removeError(targetElement);
+                }
+            }));
+            document.body.addEventListener("focusout", (function(e) {
+                const targetElement = e.target;
+                if ("INPUT" === targetElement.tagName || "TEXTAREA" === targetElement.tagName) {
+                    if (targetElement.dataset.placeholder) targetElement.placeholder = targetElement.dataset.placeholder;
+                    if (!targetElement.hasAttribute("data-no-focus-classes")) {
+                        targetElement.classList.remove("_form-focus");
+                        targetElement.parentElement.classList.remove("_form-focus");
+                    }
+                    if (targetElement.hasAttribute("data-validate")) formValidate.validateInput(targetElement);
+                }
+            }));
+            if (options.viewPass) document.addEventListener("click", (function(e) {
+                let targetElement = e.target;
+                if (targetElement.closest('[class*="__viewpass"]')) {
+                    let inputType = targetElement.classList.contains("_viewpass-active") ? "password" : "text";
+                    targetElement.parentElement.querySelector("input").setAttribute("type", inputType);
+                    targetElement.classList.toggle("_viewpass-active");
+                }
+            }));
+            if (options.autoHeight) {
+                const textareas = document.querySelectorAll("textarea[data-autoheight]");
+                if (textareas.length) {
+                    textareas.forEach((textarea => {
+                        const startHeight = textarea.hasAttribute("data-autoheight-min") ? Number(textarea.dataset.autoheightMin) : Number(textarea.offsetHeight);
+                        const maxHeight = textarea.hasAttribute("data-autoheight-max") ? Number(textarea.dataset.autoheightMax) : 1 / 0;
+                        setHeight(textarea, Math.min(startHeight, maxHeight));
+                        textarea.addEventListener("input", (() => {
+                            if (textarea.scrollHeight > startHeight) {
+                                textarea.style.height = `auto`;
+                                setHeight(textarea, Math.min(Math.max(textarea.scrollHeight, startHeight), maxHeight));
+                            }
+                        }));
+                    }));
+                    function setHeight(textarea, height) {
+                        textarea.style.height = `${height}px`;
+                    }
+                }
+            }
+        }
         let formValidate = {
             getErrors(form) {
                 let error = 0;
@@ -857,6 +957,87 @@
                 return !(!isNaN(parseFloat(n.value)) && isFinite(n.value));
             }
         };
+        function formSubmit() {
+            const forms = document.forms;
+            if (forms.length) for (const form of forms) {
+                form.addEventListener("submit", (function(e) {
+                    const form = e.target;
+                    formSubmitAction(form, e);
+                }));
+                form.addEventListener("reset", (function(e) {
+                    const form = e.target;
+                    formValidate.formClean(form);
+                }));
+            }
+            async function formSubmitAction(form, e) {
+                const error = !form.hasAttribute("data-no-validate") ? formValidate.getErrors(form) : 0;
+                if (0 === error) {
+                    const ajax = form.hasAttribute("data-ajax");
+                    if (ajax) {
+                        e.preventDefault();
+                        const formAction = form.getAttribute("action") ? form.getAttribute("action").trim() : "#";
+                        const formMethod = form.getAttribute("method") ? form.getAttribute("method").trim() : "GET";
+                        const formData = new FormData(form);
+                        form.classList.add("_sending");
+                        const response = await fetch(formAction, {
+                            method: formMethod,
+                            body: formData
+                        });
+                        if (response.ok) {
+                            let responseResult = await response.json();
+                            form.classList.remove("_sending");
+                            formSent(form, responseResult);
+                        } else {
+                            showPopup(form, false, response);
+                            form.classList.remove("_sending");
+                        }
+                    } else if (form.hasAttribute("data-dev")) {
+                        e.preventDefault();
+                        formSent(form);
+                    }
+                } else {
+                    e.preventDefault();
+                    if (form.querySelector("._form-error") && form.hasAttribute("data-goto-error")) {
+                        const formGoToErrorClass = form.dataset.gotoError ? form.dataset.gotoError : "._form-error";
+                        gotoblock_gotoBlock(formGoToErrorClass, true, 1e3);
+                    }
+                }
+            }
+            function formSent(form, responseResult = ``) {
+                document.dispatchEvent(new CustomEvent("formSent", {
+                    detail: {
+                        form
+                    }
+                }));
+                showPopup(form, true);
+                formValidate.formClean(form);
+                formLogging(`Форму відправлено!`);
+            }
+            function formLogging(message) {
+                FLS(`[Форми]: ${message}`);
+            }
+        }
+        function showPopup(form, isSucsess, response = "") {
+            setTimeout((() => {
+                if (modules_flsModules.popup) {
+                    const popup = form.dataset.popupMessage, popupTitle = document.querySelector("[data-popap-title]"), popupText = document.querySelector("[data-popap-text]");
+                    if (isSucsess) {
+                        popupTitle.innerHTML = "Success";
+                        popupText.innerHTML = "Email will be sent after 3-5 minutes";
+                    } else {
+                        popupTitle.innerHTML = `Error ${response.status}. Form not submitted`;
+                        popupText.style.display = "none";
+                    }
+                    popup ? modules_flsModules.popup.open(popup) : null;
+                }
+            }), 0);
+            setTimeout((() => {
+                if (modules_flsModules.popup) {
+                    const popup = form.dataset.popupMessage;
+                    popup ? modules_flsModules.popup.close(popup) : null;
+                }
+            }), 5e3);
+        }
         class SelectConstructor {
             constructor(props, data = null) {
                 let defaultConfig = {
@@ -1167,7 +1348,7 @@
                 }));
             }
             setLogging(message) {
-                this.config.logging ? functions_FLS(`[select]: ${message}`) : null;
+                this.config.logging ? FLS(`[select]: ${message}`) : null;
             }
         }
         modules_flsModules.select = new SelectConstructor({});
@@ -4433,6 +4614,11 @@
         isWebp();
         addTouchClass();
         menuInit();
+        formFieldsInit({
+            viewPass: false,
+            autoHeight: false
+        });
+        formSubmit();
         headerScroll();
     })();
 })();

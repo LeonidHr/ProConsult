@@ -813,7 +813,11 @@ body::after {
   overflow: visible !important;
 }
 
-.consultations-slider:not(:last-child) {
+.consultations-slider__wrapper {
+  row-gap: 1.5625rem;
+}
+
+.consultations-slider__wrapper:not(:last-child) {
   margin-bottom: 2.125rem;
 }
 
@@ -882,7 +886,9 @@ body::after {
 
 .slide-consultations {
   padding-top: 2.125rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 3rem;
+  background: #FFFFFF;
+  border-radius: 20px;
 }
 
 .slide-consultations__top {
@@ -988,6 +994,9 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #EAF7FF;
+  border-radius: 20px;
+  padding: 0.8125rem 0.625rem 0 0.625rem;
 }
 
 .bottom-slide-consultations__title:not(:last-child) {
@@ -999,10 +1008,6 @@ body::after {
   display: -ms-flexbox;
   display: flex;
   gap: 1.875rem;
-}
-
-.bottom-slide-consultations__row:not(:last-child) {
-  margin-bottom: 1.1875rem;
 }
 
 .bottom-slide-consultations__item {
@@ -1023,6 +1028,12 @@ body::after {
   line-height: 125%;
   /* 20/16 */
   color: #0D5E94;
+}
+
+.bottom-slide-consultations__btn {
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
 }
 
 .swiper-wrapper {
@@ -1982,7 +1993,7 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
   }
 
   .slide-consultations {
-    padding-left: 0.3125rem;
+    padding-left: 0.9375rem;
   }
 
   .slide-consultations__title {
@@ -2200,6 +2211,13 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 
   .consultations-slider__navigation {
     top: -4.0625rem;
+  }
+}
+
+@media (max-width: 40.625em) {
+  .consultations__container {
+    margin-left: -0.625rem;
+    min-width: calc(100% + 20px);
   }
 }
 
@@ -2462,15 +2480,15 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
     }
 }
 
-@supports (padding-left: clamp( 0.3125rem , -0.1666666667rem  +  2.3958333333vw , 1.75rem )) {
+@supports (padding-left: clamp( 0.9375rem , 0.6666666667rem  +  1.3541666667vw , 1.75rem )) {
     .slide-consultations {
-      padding-left: clamp( 0.3125rem , -0.1666666667rem  +  2.3958333333vw , 1.75rem );
+      padding-left: clamp( 0.9375rem , 0.6666666667rem  +  1.3541666667vw , 1.75rem );
     }
 }
 
-@supports not (padding-left: clamp( 0.3125rem , -0.1666666667rem  +  2.3958333333vw , 1.75rem )) {
+@supports not (padding-left: clamp( 0.9375rem , 0.6666666667rem  +  1.3541666667vw , 1.75rem )) {
     .slide-consultations {
-      padding-left: calc(0.3125rem + 1.4375 * (100vw - 20rem) / 60);
+      padding-left: calc(0.9375rem + 0.8125 * (100vw - 20rem) / 60);
     }
 }
 

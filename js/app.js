@@ -4452,6 +4452,7 @@
             if (document.querySelector(".consultations-slider")) new core(".consultations-slider", {
                 modules: [ Navigation, Pagination, Grid ],
                 speed: 800,
+                spaceBetween: 20,
                 grid: {
                     rows: 2
                 },
@@ -4467,16 +4468,13 @@
                     300: {
                         grid: {
                             rows: 1
-                        },
-                        spaceBetween: 20
+                        }
                     },
                     650: {
-                        slidesPerView: 2,
-                        spaceBetween: 20
+                        slidesPerView: 2
                     },
                     992: {
-                        slidesPerView: 3,
-                        spaceBetween: 36
+                        slidesPerView: 3
                     }
                 },
                 on: {}

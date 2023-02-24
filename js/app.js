@@ -4464,8 +4464,8 @@
                     clickable: true
                 },
                 navigation: {
-                    prevEl: ".consultations-slider .swiper-button-prev",
-                    nextEl: ".consultations-slider .swiper-button-next"
+                    prevEl: ".consultations .swiper-button-prev",
+                    nextEl: ".consultations .swiper-button-next"
                 },
                 breakpoints: {
                     300: {

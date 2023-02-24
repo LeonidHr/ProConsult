@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230224122158">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230224133127">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230224122158" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230224133127" rel="stylesheet">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -581,6 +581,33 @@
 					</div>
 				</div>
 			</section>
+			<section class="feedback">
+				<div class="feedback__image-ibg">
+					<picture><source data-srcset="img/feedback/1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/feedback/1.jpg" alt="Фон блока Остались вопросы?"></picture>
+				</div>
+				<div class="feedback__content">
+					<h3 class="feedback__title title title_w popup__title">Остались вопросы?</h3>
+					<p class="feedback__text">Заполните заявку, и мы Вам перезвоним!</p>
+					<form data-dev class="feedback__form form-feedback" action="files/sendmail/sendmail.php" method="POST">
+						<div class="form-feedback__row">
+							<div class="form-popup__item form-feedback__item">
+								<img src="img/icons/tel-w.svg" alt="Ваш номер телефона">
+								<input type="text" name="form[phone]" data-required="phone" data-error="Введите номер телефона" placeholder="Ваш номер телефона" class="form__input">
+							</div>
+							<button class="form-popup__btn button button_turquoise form-feedback__btn" type="submit">Заказать</button>
+						</div>
+						<div class="checkbox form-feedback__checkbox">
+							<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
+							<label for="c_1" class="checkbox__label checkbox__label_w">
+								<img src="img/icons/check-w.svg" alt="Я согласен на обработку персональных данных">
+								<span class="checkbox__text">
+									Я согласен на обработку персональных данных
+								</span>
+							</label>
+						</div>
+					</form>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -633,7 +660,7 @@
 						</div>
 						<div class="form-popup__row">
 							<div class="checkbox form-popup__checkbox">
-								<input id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
+								<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
 								<label for="c_1" class="checkbox__label">
 									<img src="img/icons/check.svg" alt="Я согласен на обработку персональных данных">
 									<span class="checkbox__text">
@@ -658,7 +685,7 @@
 	</div>
 
 
-	<script src="js/app.min.js?_v=20230224122158"></script>
+	<script src="js/app.min.js?_v=20230224133127"></script>
 </body>
 
 </html>

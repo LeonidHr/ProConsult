@@ -2779,6 +2779,23 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
   }
+
+  .mainscreen__image-ibg {
+    display: none;
+  }
+
+  .mainscreen__image-ibg * {
+    -o-object-position: right;
+       object-position: right;
+  }
+
+  .mainscreen__image-ibg_mobi {
+    display: block;
+  }
+
+  .mainscreen__image-ibg_mobi * {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 61.99875em) and (any-hover: none) {
@@ -3047,23 +3064,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     width: 100%;
-  }
-
-  .mainscreen__image-ibg {
-    display: none;
-  }
-
-  .mainscreen__image-ibg * {
-    -o-object-position: right;
-       object-position: right;
-  }
-
-  .mainscreen__image-ibg_mobi {
-    display: block;
-  }
-
-  .mainscreen__image-ibg_mobi * {
-    opacity: 1;
   }
 
   .feedback {

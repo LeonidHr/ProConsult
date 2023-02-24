@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230224133127">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230224143325">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230224133127" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230224143325" rel="stylesheet">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -28,13 +28,13 @@
 						<ul class="menu__list">
 							<li class="menu__item"><a href="home.html" class="menu__link">Главная</a></li>
 							<li class="menu__item"><button type="button" data-popup="#popup-about" class="menu__link">О Нас</button></li>
-							<li class="menu__item"><a href="#" class="menu__link">Консультации</a></li>
+							<li class="menu__item"><a href="#" data-goto="#consultations" class="menu__link">Консультации</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">Почему мы</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">Партнерам</a></li>
+							<li class="menu__item menu__item_contact"> <a data-da=".menu__body,992" class="header__btn button button_no-bg" href="#">Контакты</a></li>
 						</ul>
 					</nav>
 				</div>
-				<a data-da=".menu__body,992" class="header__btn button button_no-bg" href="#">Контакты</a>
 				<div data-da=".menu__body,992" class="header__select">
 					<select name="form[]" data-class-modif="form">
 						<option value="1" selected>RU</option>
@@ -60,15 +60,12 @@
 						в своих областях для решения ваших повседневных задач.
 					</h2>
 					<p class="mainscreen__text">Быстро, удобно и качественно.</p>
+					<button data-popup="#popup-about" class="mainscreen__btn-main">
+						<span>О нас</span>
+					</button>
 				</div>
-				<button data-popup="#popup-about" class="mainscreen__btn-main">
-					<div class="mainscreen__arrow">
-						<img src="img/icons/arrow-down-w.svg" alt="Белая стрелка">
-					</div>
-					<span>О нас</span>
-				</button>
 			</section>
-			<section class="consultations">
+			<section id="consultations" class="consultations">
 				<div class="consultations__container">
 					<h2 class="consultations__title title">Все консультации наших специалистов</h2>
 					<div class="consultations-slider swiper">
@@ -685,7 +682,7 @@
 	</div>
 
 
-	<script src="js/app.min.js?_v=20230224133127"></script>
+	<script src="js/app.min.js?_v=20230224143325"></script>
 </body>
 
 </html>

@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230224225847">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230225133643">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230224225847" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230225133643" rel="stylesheet">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -28,10 +28,10 @@
 						<ul class="menu__list">
 							<li class="menu__item"><a href="home.html" class="menu__link">Главная</a></li>
 							<li class="menu__item"><button type="button" data-popup="#popup-about" class="menu__link">О Нас</button></li>
-							<li class="menu__item"><button type="button" data-goto="#consultations" class="menu__link">Консультации</button></li>
-							<li class="menu__item"><button type="button" data-goto="#why" class="menu__link">Почему мы</button></li>
-							<li class="menu__item"><button type="button" class="menu__link">Партнерам</button></li>
-							<li class="menu__item menu__item_contact"><button type="button" data-goto="#contacts" class="header__btn button button_no-bg">Контакты</button></li>
+							<li class="menu__item" data-header-link><button type="button" data-goto-header data-goto="#consultations" class="menu__link">Консультации</button></li>
+							<li class="menu__item" data-header-link><button type="button" data-goto-header data-goto="#why" class="menu__link">Почему мы</button></li>
+							<li class="menu__item"><button type="button" data-popup="#popup-partners" class="menu__link">Партнерам</button></li>
+							<li class="menu__item" data-header-link><button type="button" data-goto-header data-goto="#contacts" class="menu__link">Контакты</button></li>
 						</ul>
 					</nav>
 				</div>
@@ -46,9 +46,12 @@
 					<img src="img/icons/tel.svg" alt="Иконка телефона">
 				</a>
 			</div>
+			<button data-goto="#mainscreen" class="button-back" type="button">
+				<img class="img-w-100p" src="img/icons/arrow-top.svg" alt="Вернуться назад">
+			</button>
 		</header>
 		<main class="page">
-			<section class="mainscreen">
+			<section id="mainscreen" class="mainscreen">
 				<div class="mainscreen__image-ibg">
 					<picture><source data-srcset="img/mainscreen/bg1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/mainscreen/bg1.png" alt="Фон"></picture>
 				</div>
@@ -71,15 +74,7 @@
 			<section id="consultations" class="consultations">
 				<div class="consultations__container">
 					<div class="consultations__top">
-						<h2 class="consultations__title title">Все консультации наших специалистов</h2>
-						<div class="consultations-slider__navigation">
-							<button type="button" class="swiper-button-prev">
-								<img class="img-fluid" src="img/icons/arrow-down.svg" alt="Стрелка влево">
-							</button>
-							<button type="button" class="swiper-button-next">
-								<img class="img-fluid" src="img/icons/arrow-down.svg" alt="Стрелка вправо">
-							</button>
-						</div>
+						<h2 class="consultations__title title popup__title">Все консультации наших специалистов</h2>
 					</div>
 					<div class="consultations-slider swiper">
 						<div class="consultations-slider__wrapper swiper-wrapper">
@@ -624,6 +619,14 @@
 								</div>
 							</div>
 						</div>
+						<div class="consultations-slider__navigation">
+							<button type="button" class="swiper-button-prev">
+								<img class="img-fluid" src="img/icons/arrow-down.svg" alt="Стрелка влево">
+							</button>
+							<button type="button" class="swiper-button-next">
+								<img class="img-fluid" src="img/icons/arrow-down.svg" alt="Стрелка вправо">
+							</button>
+						</div>
 						<div class="swiper-pagination consultations-slider__pagination"></div>
 					</div>
 				</div>
@@ -673,7 +676,7 @@
 								<img class="img-fluid" src="img/why/1.svg" alt="Удобно">
 							</div>
 							<h5 class="item-why__title">Удобно</h5>
-							<p class="item-why__text text">Возможность быстро получить консультацию как по телефону, так и по Whats App/Viber/Telegramw</p>
+							<p class="item-why__text text">Возможность быстро получить консультацию как по телефону, так и по Whats App/Viber/Telegram</p>
 						</article>
 						<article class="why__item item-why text-center">
 							<div class="item-why__icon">
@@ -753,12 +756,23 @@
 					<h3 class="popup__title popup__title_left popup-about__title">О нас</h3>
 					<div class="popup-about__text text">
 						<p>
-							Pro estate - это ваш надежный партнер на рынке недвижимости. Своим клиентам мы помогаем в сделках по покупке-продаже, аренде недвижимого имущество. Наш опыт, который мы получали работая с недвижимостью и закрывая сделки разной сложности, индивидуальный подход к каждому клиенту учитывая его пожелания и специфику сделки, внимание к мелочам, которые чаще всего могут вызвать сложности или проблемы при/после оформления сделки, полное юридическое сопровождение, невысокие цены на весь спектр услуг - все это делает наше предложение уникальным и конкурентоспособным. Все услуги мы предоставляем под ключ с пост оплатой. Постоянно отслеживаем все нововведения на рынке, так как сами имеем в собственности свою недвижимость и непрерывно обслуживаем объекты наших клиентов. Компетентность и знание своего дела, это наша сильная сторона. Не доверяйте свою недвижимость "маклерам-риелторам", которые за свои высокие комиссии даже не могут правильно составить юридические документы, называя их "бумажками"
+							Pro Consult - это профессиональные консультации специалистов в своей сфере для решения ваших повседневных задач.
 						</p>
 						<p>
-							Более детально все наши услуги расписаны на сайте. Мы будем рады сотрудничеству на регулярной основе. По всем вопросам обращайтесь пожалуйста, у нас бесплатные консультации для всех клиентов. Контактный телефон указан на сайте.
+							Как это бывает, у вас есть какая-то повседневная задача и вы не можете ее решить, найти ответы на вопросы, обращаетесь к шарлатанам и время, путь к решению вашей задачи становится все больше и больше, а кошелек все тоньше. Именно для этого и работает наша площадка. Здесь только качественные специалисты в своей области с образованием и большим опытом.
 						</p>
-						<p>Благодарим за внимание.</p>
+						<p>
+							К своей площадке, мы привлекаем специалистов по Латвии и др. странам - Россия, Эстония, Литва. Направления, по которым наши специалисты, смогут предоставить вам качественную консультацию - автомобильные вопросы (авто рынок, ремонт авто, подбор), IT разработки (весь спектр услуг, фронт и бек), торговля (малый и средний бизнес), недвижимость (все вопросы по сделкам с недвижимостью, покупка/продажа/аренда), медицина (рекомендации по правильному лечению, консультации людей, которые смогли вылечить у себя разные заболевания) и многое другое.
+						</p>
+						<p>
+							Перед тем, как заказывать консультацию, вам нужно связаться с нами и рассказать, свою проблему или какая именно консультация, вам нужна. После получения предварительной информации, мы сможем вам сказать, какой специалист вам больше подходит и вы сможете заказать его консультацию у нас на сайте. Консультацию можно произвести по Whats app/viber/telegram, также можно заказать и личную консультацию, она будет проходить у нас в офисе.
+						</p>
+						<p>Работаем мы как с частными лицами, так и с фирмами. </p>
+						<p>
+							Основная миссия это площадки - помогать людям решать их проблемы, за счет правильной, качественной информации. Наши специалисты, могут не только консультировать, но и делать для вас нужную вам работу
+						</p>
+						<p>Если у вас возникнут какие-то вопросы, все наши контакты указаны на сайте. </p>
+						<p>С ув. <br> Pro Consult</p>
 					</div>
 					<div class="popup-about__logo">
 						<img class="img-fluid" src="img/logo.svg" alt="ProConsult logo">
@@ -768,6 +782,38 @@
 		</div>
 	</div>
 
+	<div id="popup-partners" aria-hidden="true" class="popup popup-about">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img class="img-fluid" src="img/icons/exit.svg" alt="Закрыть окно">
+				</button>
+				<div class="popup-about__content">
+					<h3 class="popup__title popup__title_left popup-about__title">Партнерам</h3>
+					<div class="popup-about__text text">
+						<p>Приветствуем всех, кто хочет стать нашим партнером и работать с нами.</p>
+						<p>Для того, чтобы консультировать людей, вам нужно быть специалистом в своей области. </p>
+						<p>
+							Это определяет ваш результат и опыт, который накапливается за все время, пока вы решаете разные жизненные, рабочие задачи. Образование, если оно качественное и информативное, приветствуется.
+						</p>
+						<p>
+							Лучше всего, чтобы начать с нами работать, свяжитесь с нами по телефону, расскажите о себе, покажите примеры ваших работ. Мы обязательно попросим рекомендации от людей, которые с вами работали.
+						</p>
+						<p>
+							После мы примем решение о добавлении вас как специалиста к нам на площадку.
+						</p>
+						<p>
+							Помимо самих навыков, очень важно это - коммуникабельность и желание помогать людям.
+						</p>
+						<p>С ув. <br> Pro Consult</p>
+					</div>
+					<div class="popup-about__logo">
+						<img class="img-fluid" src="img/logo.svg" alt="ProConsult logo">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="popup-form" aria-hidden="true" class="popup popup-form">
 		<div class="popup__wrapper">
@@ -813,8 +859,7 @@
 		</div>
 	</div>
 
-
-	<script src="js/app.min.js?_v=20230224225847"></script>
+	<script src="js/app.min.js?_v=20230225133643"></script>
 </body>
 
 </html>

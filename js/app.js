@@ -383,6 +383,12 @@
     (() => {
         "use strict";
         const flsModules = {};
+        function removeClassForArray(elSelector, activeClass) {
+            const elems = document.querySelectorAll(elSelector);
+            elems.forEach((el => {
+                el.classList.remove(activeClass);
+            }));
+        }
         function isWebp() {
             function testWebP(callback) {
                 let webP = new Image;
@@ -4656,6 +4662,21 @@
         }
         const da = new DynamicAdapt("max");
         da.init();
+        document.addEventListener("click", addActiveHeader);
+        function addActiveHeader(e) {
+            const target = e.target;
+            if (target.closest("[data-header-link]")) {
+                removeClassForArray("[data-header-link]", "_active");
+                target.closest("[data-header-link]").classList.add("_active");
+            }
+            document.addEventListener("scroll", (e => removeActiveHeader(e, target.closest("[data-header-link]"))));
+        }
+        function removeActiveHeader(e, targetEl) {
+            const currSection = document.querySelector(targetEl.children[0].dataset.goto);
+            setTimeout((function() {
+                if (currSection.getBoundingClientRect().top > window.innerHeight) targetEl.classList.remove("_active"); else if (currSection.getBoundingClientRect().bottom < window.innerHeight / 2) targetEl.classList.remove("_active");
+            }), 600);
+        }
         window["FLS"] = true;
         isWebp();
         addTouchClass();

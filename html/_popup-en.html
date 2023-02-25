@@ -1,0 +1,111 @@
+<div id="popup-about" aria-hidden="true" class="popup popup-about">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<img class="img-fluid" src="img/icons/exit.svg" alt="Close the window">
+			</button>
+			<div class="popup-about__content">
+				<h3 class="popup__title popup__title_left popup-about__title">About us </h3>
+				<div class="popup-about__text text">
+					<p>
+						Pro Consult is professional consulting from specialists in their fields to solve your everyday problems.
+					</p>
+					<p>
+						As it happens, you have some everyday task and you can't solve it, find answers to your questions, turn to charlatans and time, the way to solve your problem is getting bigger and wider, and your wallet is getting thinner. This is what our site is for. There are only quality experts in their fields with proper education and extensive experience.
+					</p>
+					<p>
+						We invite specialists from Latvia and other countries such as Russia, Estonia and Lithuania to our site. Our specialists can offer you qualitative consultations in the following fields: automobile issues (car market, car repair, selection), IT development (the whole range of services, front and back), trade (small and medium business), real estate (all questions concerning real estate transactions, selling/buying/renting), medicine (recommendations about right treatment, consultations of people who were able to cure various diseases) and many others.
+					</p>
+					<p>
+						Before ordering a consultation, you need to contact us and tell us your problem or exactly what kind of consultation you need. After getting preliminary information, we can tell you which specialist is more suitable for you and you can order his consultation on our website. You can make a consultation via Whatsapp/viber/telegram, or you can order a personal consultation, it will take place in our office.
+					</p>
+					<p>We work with both individuals and companies. </p>
+					<p>
+						If you have any questions, all our contacts are on the site.
+					</p>
+					<p>Sincerely,</p>
+				</div>
+				<div class="popup-about__logo">
+					<img class="img-fluid" src="img/logo.svg" alt="ProConsult logo">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="popup-partners" aria-hidden="true" class="popup popup-about">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<img class="img-fluid" src="img/icons/exit.svg" alt="Закрыть окно">
+			</button>
+			<div class="popup-about__content">
+				<h3 class="popup__title popup__title_left popup-about__title">To our partners</h3>
+				<div class="popup-about__text text">
+					<p>We welcome everyone who wants to become our partner and work with us. </p>
+					<p>To consult people, you need to be an expert in your field. </p>
+					<p>
+						This determines your results and the experience you gain as you deal with different life and work tasks. Education, if it is of good quality and informative, is welcome.
+					</p>
+					<p>
+						The best way to start working with us is to contact us by phone, tell us about yourself, show examples of your work. We will definitely ask for references from people who have worked with you.
+					</p>
+					<p>
+						We will then decide whether to add you as a specialist to our site.
+					</p>
+					<p>
+						In addition to the skills, it is very important that you are communicative and want to help people.
+					</p>
+					<p>Sincerely,</p>
+				</div>
+				<div class="popup-about__logo">
+					<img class="img-fluid" src="img/logo.svg" alt="ProConsult logo">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="popup-form" aria-hidden="true" class="popup popup-form">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<img class="img-fluid" src="img/icons/exit.svg" alt="Close a window">
+			</button>
+			<div class="popup-form__content">
+				<h3 class="popup__title popup__title_center popup-form__title">Order</h3>
+				<p class="popup-form__text">Leave your request and our manager will contact you</p>
+				<form data-dev class="popup-form__form form-popup" action="files/sendmail/sendmail.php" method="POST">
+					<div class="form-popup__item">
+						<img src="img/icons/phone.svg" alt="Your phone number">
+						<input type="text" name="form[phone]" data-required="phone" data-error="Enter phone number" placeholder="Your phone number" class="form__input">
+					</div>
+					<div class="form-popup__item">
+						<img src="img/icons/sey.svg" alt="Write a message">
+						<textarea name="form[message]" data-required data-error="Write a message" placeholder="Describe your situation" class="form__input form__input_textarea"></textarea>
+					</div>
+					<div class="form-popup__row">
+						<div class="checkbox form-popup__checkbox">
+							<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
+							<label for="c_1" class="checkbox__label">
+								<img src="img/icons/check.svg" alt="Я согласен на обработку персональных данных">
+								<span class="checkbox__text">
+									I agree to the processing of personal data
+								</span>
+							</label>
+						</div>
+						<button class="form-popup__btn button" type="submit">Order</button>
+					</div>
+				</form>
+				<div class="popup-form__bottom bottom-popup-form">
+					<p class="bottom-popup-form__text">You can also contact us on the number</p>
+					<a href="tel:+37126858674" target="_blank" class="bottom-popup-form__link">+ (371) 26858674</a>
+					<div class="bottom-popup-form__btns">
+						<a target="_blank" class="bottom-popup-form__btn button button_no-bg" href="https://wa.me/+37126858674">Whats App</a>
+						<a target="_blank" class="bottom-popup-form__btn button button_no-bg" href="https://t.me/+37126858674">Telegram</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

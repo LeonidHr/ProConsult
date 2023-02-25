@@ -1,0 +1,112 @@
+<div id="popup-about" aria-hidden="true" class="popup popup-about">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<img class="img-fluid" src="img/icons/exit.svg" alt="Закрыть окно">
+			</button>
+			<div class="popup-about__content">
+				<h3 class="popup__title popup__title_left popup-about__title">О нас</h3>
+				<div class="popup-about__text text">
+					<p>
+						Pro Consult - это профессиональные консультации специалистов в своей сфере для решения ваших повседневных задач.
+					</p>
+					<p>
+						Как это бывает, у вас есть какая-то повседневная задача и вы не можете ее решить, найти ответы на вопросы, обращаетесь к шарлатанам и время, путь к решению вашей задачи становится все больше и больше, а кошелек все тоньше. Именно для этого и работает наша площадка. Здесь только качественные специалисты в своей области с образованием и большим опытом.
+					</p>
+					<p>
+						К своей площадке, мы привлекаем специалистов по Латвии и др. странам - Россия, Эстония, Литва. Направления, по которым наши специалисты, смогут предоставить вам качественную консультацию - автомобильные вопросы (авто рынок, ремонт авто, подбор), IT разработки (весь спектр услуг, фронт и бек), торговля (малый и средний бизнес), недвижимость (все вопросы по сделкам с недвижимостью, покупка/продажа/аренда), медицина (рекомендации по правильному лечению, консультации людей, которые смогли вылечить у себя разные заболевания) и многое другое.
+					</p>
+					<p>
+						Перед тем, как заказывать консультацию, вам нужно связаться с нами и рассказать, свою проблему или какая именно консультация, вам нужна. После получения предварительной информации, мы сможем вам сказать, какой специалист вам больше подходит и вы сможете заказать его консультацию у нас на сайте. Консультацию можно произвести по Whats app/viber/telegram, также можно заказать и личную консультацию, она будет проходить у нас в офисе.
+					</p>
+					<p>Работаем мы как с частными лицами, так и с фирмами. </p>
+					<p>
+						Основная миссия это площадки - помогать людям решать их проблемы, за счет правильной, качественной информации. Наши специалисты, могут не только консультировать, но и делать для вас нужную вам работу
+					</p>
+					<p>Если у вас возникнут какие-то вопросы, все наши контакты указаны на сайте. </p>
+					<p>С ув.</p>
+				</div>
+				<div class="popup-about__logo">
+					<img class="img-fluid" src="img/logo.svg" alt="ProConsult logo">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="popup-partners" aria-hidden="true" class="popup popup-about">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<img class="img-fluid" src="img/icons/exit.svg" alt="Закрыть окно">
+			</button>
+			<div class="popup-about__content">
+				<h3 class="popup__title popup__title_left popup-about__title">Партнерам</h3>
+				<div class="popup-about__text text">
+					<p>Приветствуем всех, кто хочет стать нашим партнером и работать с нами.</p>
+					<p>Для того, чтобы консультировать людей, вам нужно быть специалистом в своей области. </p>
+					<p>
+						Это определяет ваш результат и опыт, который накапливается за все время, пока вы решаете разные жизненные, рабочие задачи. Образование, если оно качественное и информативное, приветствуется.
+					</p>
+					<p>
+						Лучше всего, чтобы начать с нами работать, свяжитесь с нами по телефону, расскажите о себе, покажите примеры ваших работ. Мы обязательно попросим рекомендации от людей, которые с вами работали.
+					</p>
+					<p>
+						После мы примем решение о добавлении вас как специалиста к нам на площадку.
+					</p>
+					<p>
+						Помимо самих навыков, очень важно это - коммуникабельность и желание помогать людям.
+					</p>
+					<p>С ув.</p>
+				</div>
+				<div class="popup-about__logo">
+					<img class="img-fluid" src="img/logo.svg" alt="ProConsult logo">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="popup-form" aria-hidden="true" class="popup popup-form">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<img class="img-fluid" src="img/icons/exit.svg" alt="Закрыть окно">
+			</button>
+			<div class="popup-form__content">
+				<h3 class="popup__title popup__title_center popup-form__title">Заказать</h3>
+				<p class="popup-form__text">Оставьте вашу заявку и наш менеджер свяжется с вами</p>
+				<form data-dev class="popup-form__form form-popup" action="files/sendmail/sendmail.php" method="POST">
+					<div class="form-popup__item">
+						<img src="img/icons/phone.svg" alt="Ваш номер телефона">
+						<input type="text" name="form[phone]" data-required="phone" data-error="Введите номер телефона" placeholder="Ваш номер телефона" class="form__input">
+					</div>
+					<div class="form-popup__item">
+						<img src="img/icons/sey.svg" alt="Ваш номер телефона">
+						<textarea name="form[message]" data-required data-error="Напишите сообщение" placeholder="Опишите вашу ситуацию" class="form__input form__input_textarea"></textarea>
+					</div>
+					<div class="form-popup__row">
+						<div class="checkbox form-popup__checkbox">
+							<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
+							<label for="c_1" class="checkbox__label">
+								<img src="img/icons/check.svg" alt="Я согласен на обработку персональных данных">
+								<span class="checkbox__text">
+									Я согласен на обработку персональных данных
+								</span>
+							</label>
+						</div>
+						<button class="form-popup__btn button" type="submit">Заказать</button>
+					</div>
+				</form>
+				<div class="popup-form__bottom bottom-popup-form">
+					<p class="bottom-popup-form__text">Также с нами можно связаться по номеру</p>
+					<a href="tel:+37126858674" target="_blank" class="bottom-popup-form__link">+ (371) 26858674</a>
+					<div class="bottom-popup-form__btns">
+						<a target="_blank" class="bottom-popup-form__btn button button_no-bg" href="https://wa.me/+37126858674">Whats App</a>
+						<a target="_blank" class="bottom-popup-form__btn button button_no-bg" href="https://t.me/+37126858674">Telegram</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

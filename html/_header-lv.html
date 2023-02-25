@@ -1,0 +1,33 @@
+<header class="header">
+	<div class="header__container">
+		<button type="button" class="menu__icon icon-menu"><span></span></button>
+		<a href="home.html" class="header__logo">
+			<img src="img/logo.svg" alt="ProConsult logo">
+		</a>
+		<div class="header__menu menu">
+			<nav class="menu__body">
+				<ul class="menu__list">
+					<li class="menu__item"><a href="home.html" class="menu__link">Galvenā</a></li>
+					<li class="menu__item"><button type="button" data-popup="#popup-about" class="menu__link">Par mums</button></li>
+					<li class="menu__item" data-header-link><button type="button" data-goto-header data-goto="#consultations" class="menu__link">Konsultācijas</button></li>
+					<li class="menu__item" data-header-link><button type="button" data-goto-header data-goto="#why" class="menu__link">Kāpēc mēs</button></li>
+					<li class="menu__item"><button type="button" data-popup="#popup-partners" class="menu__link">Partneri</button></li>
+					<li class="menu__item" data-header-link><button type="button" data-goto-header data-goto="#contacts" class="menu__link">Kontakti</button></li>
+				</ul>
+			</nav>
+		</div>
+		<div data-da=".menu__body,992.98" class="header__select">
+			<select name="form[]" data-class-modif="form">
+				<option selected value="1">LV</option>
+				<option data-href="home.html" value="2">RU</option>
+				<option data-href="home-en.html" value="3">EN</option>
+			</select>
+		</div>
+		<a href="#" class="header__phone">
+			<img src="img/icons/tel.svg" alt="Иконка телефона">
+		</a>
+	</div>
+	<button data-goto="#mainscreen" class="button-back" type="button">
+		<img class="img-w-100p" src="img/icons/arrow-top.svg" alt="Вернуться назад">
+	</button>
+</header>

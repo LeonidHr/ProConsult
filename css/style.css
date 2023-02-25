@@ -3570,6 +3570,11 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
         -ms-flex-pack: center;
             justify-content: center;
   }
+
+  .mainscreen {
+    height: 80vh;
+    margin-bottom: 22vh;
+  }
 }
 
 @media (min-width: 62em) and (max-width: 77.5em) {

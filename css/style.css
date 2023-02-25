@@ -80,7 +80,7 @@ body {
 }
 
 .wrapper {
-  min-height: 200%;
+  min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -231,8 +231,8 @@ body {
 
 .select__body {
   position: relative;
-  right: -1.125rem;
   min-width: 4.6875rem;
+  margin-right: 0.25rem;
 }
 
 .select__title {
@@ -244,9 +244,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -953,9 +953,9 @@ body::after {
       -ms-flex-pack: center;
           justify-content: center;
   row-gap: 2.5rem;
-  -webkit-column-gap: 2.5rem;
-     -moz-column-gap: 2.5rem;
-          column-gap: 2.5rem;
+  -webkit-column-gap: 1.875rem;
+     -moz-column-gap: 1.875rem;
+          column-gap: 1.875rem;
 }
 
 .menu__item {
@@ -2759,6 +2759,10 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
     right: 1.25rem;
   }
 
+  .menu__link {
+    font-size: 0.875rem;
+  }
+
   .footer__image-ibg {
     padding-bottom: 20rem;
   }
@@ -3229,10 +3233,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 
   .title_main {
     font-size: 1.6875rem;
-  }
-
-  .menu__link {
-    font-size: 0.875rem;
   }
 
   .consultations__title {
@@ -4196,16 +4196,16 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 }
 }
 
-@media (min-width: 47.9375em) and (max-width: 93.75em) {
-@supports (font-size: clamp( 0.875rem , 0.74420191rem  +  0.272851296vw , 1rem )) {
+@media (min-width: 62em) and (max-width: 93.75em) {
+@supports (font-size: clamp( 0.875rem , 0.6309055118rem  +  0.3937007874vw , 1rem )) {
     .menu__link {
-      font-size: clamp( 0.875rem , 0.74420191rem  +  0.272851296vw , 1rem );
+      font-size: clamp( 0.875rem , 0.6309055118rem  +  0.3937007874vw , 1rem );
     }
 }
 
-@supports not (font-size: clamp( 0.875rem , 0.74420191rem  +  0.272851296vw , 1rem )) {
+@supports not (font-size: clamp( 0.875rem , 0.6309055118rem  +  0.3937007874vw , 1rem )) {
     .menu__link {
-      font-size: calc(0.875rem + 0.125 * (100vw - 47.9375rem) / 45.8125);
+      font-size: calc(0.875rem + 0.125 * (100vw - 62rem) / 31.75);
     }
 }
 }

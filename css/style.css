@@ -1034,6 +1034,10 @@ body::after {
   row-gap: 0.9375rem;
 }
 
+.footer__list-link {
+  font-size: 0.6875rem !important;
+}
+
 .contacts-footer {
   position: absolute;
   bottom: 0;
@@ -2661,10 +2665,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
     padding-bottom: 26.875rem;
   }
 
-  .footer__list-link {
-    font-size: 0.875rem;
-  }
-
   .mainscreen__subtitle {
     max-width: 59.375rem;
   }
@@ -2761,10 +2761,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 
   .footer__image-ibg {
     padding-bottom: 20rem;
-  }
-
-  .footer__list-link {
-    font-size: 0.6875rem;
   }
 
   .contacts-footer__content {
@@ -4072,18 +4068,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 @supports not (padding-bottom: clamp( 20rem , 12.650862069rem  +  11.8534482759vw , 26.875rem )) {
     .footer__image-ibg {
       padding-bottom: calc(20rem + 6.875 * (100vw - 62rem) / 58);
-    }
-}
-
-@supports (font-size: clamp( 0.6875rem , 0.4870689655rem  +  0.3232758621vw , 0.875rem )) {
-    .footer__list-link {
-      font-size: clamp( 0.6875rem , 0.4870689655rem  +  0.3232758621vw , 0.875rem );
-    }
-}
-
-@supports not (font-size: clamp( 0.6875rem , 0.4870689655rem  +  0.3232758621vw , 0.875rem )) {
-    .footer__list-link {
-      font-size: calc(0.6875rem + 0.1875 * (100vw - 62rem) / 58);
     }
 }
 

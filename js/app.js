@@ -914,16 +914,15 @@
                 } else if ("phone" === formRequiredItem.dataset.required) if (this.isNumber(formRequiredItem)) {
                     this.addError(formRequiredItem);
                     error++;
-                } else this.removeError(formRequiredItem); else if ("capcha" === formRequiredItem.dataset.required) {
-                    if (formRequiredItem.querySelector(".recaptcha-checkbox")) {
-                        const checkboxRec = formRequiredItem.querySelector(".recaptcha-checkbox");
-                        const checkboxAria = checkboxRec.getAttribute("aria-checked");
-                        if ("false" == checkboxAria) {
-                            this.addError(formRequiredItem);
-                            error++;
-                        } else this.removeError(formRequiredItem);
-                    }
-                } else if ("phonemail" === formRequiredItem.dataset.required) {
+                } else this.removeError(formRequiredItem); else if ("capcha" === formRequiredItem.dataset.required) if (formRequiredItem.querySelector(".recaptcha-checkbox")) {
+                    const checkboxRec = formRequiredItem.querySelector(".recaptcha-checkbox");
+                    const checkboxAria = checkboxRec.getAttribute("aria-checked");
+                    console.log("succsess");
+                    if ("false" == checkboxAria) {
+                        this.addError(formRequiredItem);
+                        error++;
+                    } else this.removeError(formRequiredItem);
+                } else console.log("sdfdsfdsfds"); else if ("phonemail" === formRequiredItem.dataset.required) {
                     formRequiredItem.value = formRequiredItem.value.replace(" ", "");
                     if (this.isNumber(formRequiredItem) && this.emailTest(formRequiredItem)) {
                         this.addError(formRequiredItem);

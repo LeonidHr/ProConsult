@@ -917,11 +917,11 @@
                         var recaptcha_id = grecaptcha.getResponse().getAttribute("data-sitekey");
                         successfulRecaptchas.push(recaptcha_id);
                     }
-                    grecaptcha.render("#capcha1", {
+                    grecaptcha.render("capcha1", {
                         sitekey: "6Ld7xLUkAAAAAHSftlO-lDJZ0d0pAJMI6Q-pF67a",
                         callback: onSubmit
                     });
-                    grecaptcha.render("#capcha2", {
+                    grecaptcha.render("capcha2", {
                         sitekey: "6LfEtLUkAAAAAK9FnQxzJFARd4103A0Nc1DkWiIQ",
                         callback: onSubmit
                     });

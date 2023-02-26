@@ -916,6 +916,7 @@
                     error++;
                 } else this.removeError(formRequiredItem); else if ("capcha" === formRequiredItem.dataset.required) {
                     var token = grecaptcha.getResponse();
+                    console.log(token);
                     if (0 == token.length) {
                         console.log("error");
                         this.addError(formRequiredItem);
@@ -926,6 +927,7 @@
                     }
                 } else if ("capcha1" === formRequiredItem.dataset.required) {
                     token = grecaptcha.getResponse();
+                    console.log(token);
                     if (0 == token.length) {
                         console.log("error");
                         this.addError(formRequiredItem);
@@ -4712,14 +4714,6 @@
                 if (currSection.getBoundingClientRect().top > window.innerHeight) targetEl.classList.remove("_active"); else if (currSection.getBoundingClientRect().bottom < window.innerHeight / 2) targetEl.classList.remove("_active");
             }), 600);
         }
-        grecaptcha.ready((function() {
-            grecaptcha.execute("6LfEtLUkAAAAAK9FnQxzJFARd4103A0Nc1DkWiIQ", {
-                action: "contact"
-            }).then((function(token) {
-                document.getElementById("recaptchaResponse1").value = token;
-                document.getElementById("recaptchaResponse2").value = token;
-            }));
-        }));
         window["FLS"] = true;
         isWebp();
         addTouchClass();

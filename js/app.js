@@ -4704,7 +4704,7 @@
         document.addEventListener("click", (e => {
             const capchaWrap = document.querySelector("#capcha2-wrap");
             console.log(capcha);
-            if (document.documentElement.classList.contains("popup-show")) capcha.remove(); else capchaWrap.insertAdjacentElement("beforeend", capcha);
+            if (document.documentElement.classList.contains("popup-show")) capcha.remove(); else if (e.target.closest(".popup")) capchaWrap.insertAdjacentElement("beforeend", capcha);
         }));
         window["FLS"] = true;
         isWebp();

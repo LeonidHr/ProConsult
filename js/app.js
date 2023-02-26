@@ -922,17 +922,6 @@
                         console.log("succsess");
                         this.removeError(formRequiredItem);
                     }
-                } else if ("capcha1" === formRequiredItem.dataset.required) {
-                    token = grecaptcha.getResponse();
-                    console.log(token);
-                    if (0 == token.length) {
-                        console.log("error");
-                        this.addError(formRequiredItem);
-                        error++;
-                    } else {
-                        console.log("succsess");
-                        this.removeError(formRequiredItem);
-                    }
                 } else if ("phonemail" === formRequiredItem.dataset.required) {
                     formRequiredItem.value = formRequiredItem.value.replace(" ", "");
                     if (this.isNumber(formRequiredItem) && this.emailTest(formRequiredItem)) {
@@ -4711,6 +4700,12 @@
                 if (currSection.getBoundingClientRect().top > window.innerHeight) targetEl.classList.remove("_active"); else if (currSection.getBoundingClientRect().bottom < window.innerHeight / 2) targetEl.classList.remove("_active");
             }), 600);
         }
+        const capcha = document.querySelector("#capcha2");
+        document.addEventListener("click", (e => {
+            const capchaWrap = document.querySelector("#capcha2-wrap");
+            console.log(capcha);
+            if (document.documentElement.classList.contains("popup-show")) capcha.remove(); else capchaWrap.insertAdjacentElement("beforeend", capcha);
+        }));
         window["FLS"] = true;
         isWebp();
         addTouchClass();

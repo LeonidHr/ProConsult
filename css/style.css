@@ -1599,7 +1599,7 @@ body::after {
 }
 
 .form-feedback__row:not(:last-child) {
-  margin-bottom: 0.9375rem;
+  margin-bottom: 1.25rem;
 }
 
 .form-feedback__item .form__input {
@@ -1626,6 +1626,10 @@ body::after {
 
 .form-feedback__item .form__input::placeholder {
   color: #fff;
+}
+
+.form-feedback__checkbox:not(:last-child) {
+  margin-bottom: 0.9375rem;
 }
 
 .why {

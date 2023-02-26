@@ -12,11 +12,11 @@
 	<meta name="twitter:title" content="ProConsult">
 	<meta name="twitter:description" content="Pro Consult - консультации специалистов для решения ваших повседневных задач.">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230226110018">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230226121749">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230226110018" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230226121749" rel="stylesheet">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -709,21 +709,21 @@
 						<div class="feedback__content">
 							<div class="feedback__inner">
 								<h3 class="feedback__title title title_w popup__title">Do you have any questions?</h3>
-								<p class="feedback__text">Fill out the application and we will call you back!</p>
+								<p class="feedback__text">Leave your request and our manager will contact you.</p>
 								<form data-dev class="feedback__form form-feedback" action="files/sendmail/sendmail.php" method="POST">
 									<div class="form-feedback__row">
 										<div class="form-popup__item form-feedback__item">
-											<img src="img/icons/tel-w.svg" alt="Your phone number">
-											<input type="text" name="form[phone]" data-required="phone" data-error="Your phone number" placeholder="Your phone number" class="form__input">
+											<img src="img/icons/tel-w.svg" alt="Tel./Email ">
+											<input type="text" name="form[phone]" data-required="phonemail" data-error="Enter Tel./Email " placeholder="Tel./Email " class="form__input">
 										</div>
-										<button class="form-popup__btn button button_turquoise form-feedback__btn" type="submit">Order</button>
+										<button class="form-popup__btn button button_turquoise form-feedback__btn" type="submit">Send</button>
 									</div>
 									<div class="checkbox form-feedback__checkbox">
 										<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
 										<label for="c_1" class="checkbox__label checkbox__label_w">
 											<img src="img/icons/check-w.svg" alt="I agree to the processing of personal data">
 											<span class="checkbox__text">
-												I agree to the processing of personal data
+												I agree with personal data processing.
 											</span>
 										</label>
 									</div>
@@ -888,32 +888,33 @@
 					<img class="img-fluid" src="img/icons/exit.svg" alt="Close a window">
 				</button>
 				<div class="popup-form__content">
-					<h3 class="popup__title popup__title_center popup-form__title">Order</h3>
-					<p class="popup-form__text">Leave your request and our manager will contact you</p>
+					<h3 class="popup__title popup__title_center popup-form__title">Order Form</h3>
+					<p class="popup-form__text">Leave your request and our manager will contact you.</p>
 					<form data-dev class="popup-form__form form-popup" action="files/sendmail/sendmail.php" method="POST">
 						<div class="form-popup__item">
-							<img src="img/icons/phone.svg" alt="Your phone number">
-							<input type="text" name="form[phone]" data-required="phone" data-error="Enter phone number" placeholder="Your phone number" class="form__input">
+							<img src="img/icons/phone.svg" alt="Tel./Email">
+							<input type="text" name="form[phone]" data-required="phonemail" data-error="Enter Tel./Email" placeholder="Tel./Email " class="form__input">
 						</div>
 						<div class="form-popup__item">
 							<img src="img/icons/sey.svg" alt="Write a message">
-							<textarea name="form[message]" data-required data-error="Write a message" placeholder="Describe your situation" class="form__input form__input_textarea"></textarea>
+							<textarea name="form[message]" data-required data-error="Write a message" placeholder="Write us your situation" class="form__input form__input_textarea"></textarea>
 						</div>
 						<div class="form-popup__row">
 							<div class="checkbox form-popup__checkbox">
-								<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
-								<label for="c_1" class="checkbox__label">
-									<img src="img/icons/check.svg" alt="Я согласен на обработку персональных данных">
-									<span class="checkbox__text">
-										I agree to the processing of personal data
-									</span>
-								</label>
+								<!-- <input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
+							<label for="c_1" class="checkbox__label">
+								<img src="img/icons/check.svg" alt="I agree with personal data processing.">
+								<span class="checkbox__text">
+									I agree with personal data processing. 
+								</span>
+							</label> -->
+								<div class="g-recaptcha" data-sitekey="6LdebbUkAAAAAHDRtFdhbvRqYHD8ayVYoEotAlWk">
+								</div>
+								<button class="form-popup__btn button" type="submit">Send</button>
 							</div>
-							<button class="form-popup__btn button" type="submit">Order</button>
-						</div>
 					</form>
 					<div class="popup-form__bottom bottom-popup-form">
-						<p class="bottom-popup-form__text">You can also contact us on the number</p>
+						<p class="bottom-popup-form__text">Also are possible to contact with us by phone.</p>
 						<a href="tel:+37126858674" target="_blank" class="bottom-popup-form__link">+ (371) 26858674</a>
 						<div class="bottom-popup-form__btns">
 							<a target="_blank" class="bottom-popup-form__btn button button_no-bg" href="https://wa.me/+37126858674">Whats App</a>
@@ -925,7 +926,8 @@
 		</div>
 	</div>
 
-	<script src="js/app.min.js?_v=20230226110018"></script>
+	<script src="js/app.min.js?_v=20230226121749"></script>
+	<script src="https://www.google.com/recaptcha/api.js?_v=20230226121749" async defer></script>
 </body>
 
 </html>

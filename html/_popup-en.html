@@ -73,32 +73,33 @@
 				<img class="img-fluid" src="img/icons/exit.svg" alt="Close a window">
 			</button>
 			<div class="popup-form__content">
-				<h3 class="popup__title popup__title_center popup-form__title">Order</h3>
-				<p class="popup-form__text">Leave your request and our manager will contact you</p>
+				<h3 class="popup__title popup__title_center popup-form__title">Order Form</h3>
+				<p class="popup-form__text">Leave your request and our manager will contact you.</p>
 				<form data-dev class="popup-form__form form-popup" action="files/sendmail/sendmail.php" method="POST">
 					<div class="form-popup__item">
-						<img src="img/icons/phone.svg" alt="Your phone number">
-						<input type="text" name="form[phone]" data-required="phone" data-error="Enter phone number" placeholder="Your phone number" class="form__input">
+						<img src="img/icons/phone.svg" alt="Tel./Email">
+						<input type="text" name="form[phone]" data-required="phonemail" data-error="Enter Tel./Email" placeholder="Tel./Email " class="form__input">
 					</div>
 					<div class="form-popup__item">
 						<img src="img/icons/sey.svg" alt="Write a message">
-						<textarea name="form[message]" data-required data-error="Write a message" placeholder="Describe your situation" class="form__input form__input_textarea"></textarea>
+						<textarea name="form[message]" data-required data-error="Write a message" placeholder="Write us your situation" class="form__input form__input_textarea"></textarea>
 					</div>
 					<div class="form-popup__row">
 						<div class="checkbox form-popup__checkbox">
-							<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
+							<!-- <input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
 							<label for="c_1" class="checkbox__label">
-								<img src="img/icons/check.svg" alt="Я согласен на обработку персональных данных">
+								<img src="img/icons/check.svg" alt="I agree with personal data processing.">
 								<span class="checkbox__text">
-									I agree to the processing of personal data
+									I agree with personal data processing. 
 								</span>
-							</label>
+							</label> -->
+							<div class="g-recaptcha" data-sitekey="6LdebbUkAAAAAHDRtFdhbvRqYHD8ayVYoEotAlWk">
+							</div>
+							<button class="form-popup__btn button" type="submit">Send</button>
 						</div>
-						<button class="form-popup__btn button" type="submit">Order</button>
-					</div>
 				</form>
 				<div class="popup-form__bottom bottom-popup-form">
-					<p class="bottom-popup-form__text">You can also contact us on the number</p>
+					<p class="bottom-popup-form__text">Also are possible to contact with us by phone.</p>
 					<a href="tel:+37126858674" target="_blank" class="bottom-popup-form__link">+ (371) 26858674</a>
 					<div class="bottom-popup-form__btns">
 						<a target="_blank" class="bottom-popup-form__btn button button_no-bg" href="https://wa.me/+37126858674">Whats App</a>

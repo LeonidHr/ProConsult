@@ -914,7 +914,13 @@
                 } else if ("phone" === formRequiredItem.dataset.required) if (this.isNumber(formRequiredItem)) {
                     this.addError(formRequiredItem);
                     error++;
-                } else this.removeError(formRequiredItem); else if ("checkbox" === formRequiredItem.type && !formRequiredItem.checked) {
+                } else this.removeError(formRequiredItem); else if ("phonemail" === formRequiredItem.dataset.required) {
+                    formRequiredItem.value = formRequiredItem.value.replace(" ", "");
+                    if (this.isNumber(formRequiredItem) && this.emailTest(formRequiredItem)) {
+                        this.addError(formRequiredItem);
+                        error++;
+                    } else this.removeError(formRequiredItem);
+                } else if ("checkbox" === formRequiredItem.type && !formRequiredItem.checked) {
                     this.addError(formRequiredItem);
                     error++;
                 } else if (!formRequiredItem.value.trim()) {

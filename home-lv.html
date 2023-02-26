@@ -12,11 +12,11 @@
 	<meta name="twitter:title" content="ProConsult">
 	<meta name="twitter:description" content="Pro Consult - консультации специалистов для решения ваших повседневных задач.">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230226110018">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230226121749">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230226110018" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230226121749" rel="stylesheet">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -704,26 +704,26 @@
 				<div class="feedback__container">
 					<div class="feedback__wrapper">
 						<div class="feedback__image-ibg">
-							<picture><source data-srcset="img/feedback/1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/feedback/1.jpg" alt="Фон блока Остались вопросы?"></picture>
+							<picture><source data-srcset="img/feedback/1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/feedback/1.jpg" alt="Vai jums ir kādi jautājumi?"></picture>
 						</div>
 						<div class="feedback__content">
 							<div class="feedback__inner">
-								<h3 class="feedback__title title title_w popup__title">Остались вопросы?</h3>
-								<p class="feedback__text">Заполните заявку, и мы Вам перезвоним!</p>
+								<h3 class="feedback__title title title_w popup__title">Vai jums ir kādi jautājumi?</h3>
+								<p class="feedback__text">Atstājiet jūsu pieteikumu un mūsu menedžeris sazināsies ar jums.</p>
 								<form data-dev class="feedback__form form-feedback" action="files/sendmail/sendmail.php" method="POST">
 									<div class="form-feedback__row">
 										<div class="form-popup__item form-feedback__item">
-											<img src="img/icons/tel-w.svg" alt="Ваш номер телефона">
-											<input type="text" name="form[phone]" data-required="phone" data-error="Введите номер телефона" placeholder="Ваш номер телефона" class="form__input">
+											<img src="img/icons/tel-w.svg" alt="Tāl./Email">
+											<input type="text" name="form[phone]" data-required="phonemail" data-error="Enter Tāl./Email" placeholder="Tāl./Email" class="form__input">
 										</div>
-										<button class="form-popup__btn button button_turquoise form-feedback__btn" type="submit">Заказать</button>
+										<button class="form-popup__btn button button_turquoise form-feedback__btn" type="submit">Nosūtīt</button>
 									</div>
 									<div class="checkbox form-feedback__checkbox">
-										<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
+										<input checked id="c_1" data-required data-error="Es piekrītu personas datu apstrādei" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
 										<label for="c_1" class="checkbox__label checkbox__label_w">
-											<img src="img/icons/check-w.svg" alt="Я согласен на обработку персональных данных">
+											<img src="img/icons/check-w.svg" alt="Es piekrītu personas datu apstrādei">
 											<span class="checkbox__text">
-												Я согласен на обработку персональных данных
+												Es piekrītu personas datu apstrādei
 											</span>
 										</label>
 									</div>
@@ -889,32 +889,33 @@
 					<img class="img-fluid" src="img/icons/exit.svg" alt="Закрыть окно">
 				</button>
 				<div class="popup-form__content">
-					<h3 class="popup__title popup__title_center popup-form__title">Заказать</h3>
-					<p class="popup-form__text">Оставьте вашу заявку и наш менеджер свяжется с вами</p>
+					<h3 class="popup__title popup__title_center popup-form__title">Pasūtīt</h3>
+					<p class="popup-form__text">Atstājiet jūsu pieteikumu un mūsu menedžeris sazināsies ar jums.</p>
 					<form data-dev class="popup-form__form form-popup" action="files/sendmail/sendmail.php" method="POST">
 						<div class="form-popup__item">
-							<img src="img/icons/phone.svg" alt="Ваш номер телефона">
-							<input type="text" name="form[phone]" data-required="phone" data-error="Введите номер телефона" placeholder="Ваш номер телефона" class="form__input">
+							<img src="img/icons/phone.svg" alt="Tāl./Email">
+							<input type="text" name="form[phone]" data-required="phonemail" data-error="Enter Tāl./Email" placeholder="Tāl./Email" class="form__input">
 						</div>
 						<div class="form-popup__item">
-							<img src="img/icons/sey.svg" alt="Ваш номер телефона">
-							<textarea name="form[message]" data-required data-error="Напишите сообщение" placeholder="Опишите вашу ситуацию" class="form__input form__input_textarea"></textarea>
+							<img src="img/icons/sey.svg" alt="Aprakstiet jūsu situāciju">
+							<textarea name="form[message]" data-required data-error="Aprakstiet jūsu situāciju" placeholder="Aprakstiet jūsu situāciju" class="form__input form__input_textarea"></textarea>
 						</div>
 						<div class="form-popup__row">
 							<div class="checkbox form-popup__checkbox">
-								<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
-								<label for="c_1" class="checkbox__label">
-									<img src="img/icons/check.svg" alt="Я согласен на обработку персональных данных">
-									<span class="checkbox__text">
-										Я согласен на обработку персональных данных
-									</span>
-								</label>
+								<!-- <input checked id="c_1" data-required data-error="Es piekrītu personas datu apstrādei" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
+							<label for="c_1" class="checkbox__label">
+								<img src="img/icons/check.svg" alt="Es piekrītu personas datu apstrādei">
+								<span class="checkbox__text">
+									Es piekrītu personas datu apstrādei
+								</span>
+							</label> -->
+								<div class="g-recaptcha" data-sitekey="6LdebbUkAAAAAHDRtFdhbvRqYHD8ayVYoEotAlWk">
+								</div>
+								<button class="form-popup__btn button" type="submit">Nosūtīt</button>
 							</div>
-							<button class="form-popup__btn button" type="submit">Заказать</button>
-						</div>
 					</form>
 					<div class="popup-form__bottom bottom-popup-form">
-						<p class="bottom-popup-form__text">Также с нами можно связаться по номеру</p>
+						<p class="bottom-popup-form__text">Tāpat var sazināties ar mums pa tālruni</p>
 						<a href="tel:+37126858674" target="_blank" class="bottom-popup-form__link">+ (371) 26858674</a>
 						<div class="bottom-popup-form__btns">
 							<a target="_blank" class="bottom-popup-form__btn button button_no-bg" href="https://wa.me/+37126858674">Whats App</a>
@@ -926,7 +927,8 @@
 		</div>
 	</div>
 
-	<script src="js/app.min.js?_v=20230226110018"></script>
+	<script src="js/app.min.js?_v=20230226121749"></script>
+	<script src="https://www.google.com/recaptcha/api.js?_v=20230226121749" async defer></script>
 </body>
 
 </html>

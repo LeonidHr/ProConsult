@@ -915,12 +915,14 @@
                     this.addError(formRequiredItem);
                     error++;
                 } else this.removeError(formRequiredItem); else if ("capcha" === formRequiredItem.dataset.required) {
-                    const checkboxRec = formRequiredItem.querySelector(".recaptcha-checkbox");
-                    const checkboxAria = checkboxRec.getAttribute("aria-checked");
-                    if (!checkboxAria) {
-                        this.addError(formRequiredItem);
-                        error++;
-                    } else this.removeError(formRequiredItem);
+                    if (formRequiredItem.querySelector(".recaptcha-checkbox")) {
+                        const checkboxRec = formRequiredItem.querySelector(".recaptcha-checkbox");
+                        const checkboxAria = checkboxRec.getAttribute("aria-checked");
+                        if ("false" == checkboxAria) {
+                            this.addError(formRequiredItem);
+                            error++;
+                        } else this.removeError(formRequiredItem);
+                    }
                 } else if ("phonemail" === formRequiredItem.dataset.required) {
                     formRequiredItem.value = formRequiredItem.value.replace(" ", "");
                     if (this.isNumber(formRequiredItem) && this.emailTest(formRequiredItem)) {

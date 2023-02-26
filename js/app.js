@@ -4502,11 +4502,11 @@
                     },
                     767: {
                         slidesPerView: 2,
-                        spaceBetween: 20
+                        spaceBetween: 22
                     },
                     992: {
                         slidesPerView: 3,
-                        spaceBetween: 36
+                        spaceBetween: 45
                     }
                 },
                 on: {}

@@ -912,26 +912,26 @@
                         error++;
                     } else this.removeError(formRequiredItem);
                 } else if ("capcha" === formRequiredItem.dataset.required) {
-                    var successfulRecaptchas = [];
-                    function onSubmit(token) {
-                        var recaptcha_id = grecaptcha.getResponse().getAttribute("data-sitekey");
-                        successfulRecaptchas.push(recaptcha_id);
-                    }
-                    grecaptcha.render("capcha1", {
-                        sitekey: "6Ld7xLUkAAAAAHSftlO-lDJZ0d0pAJMI6Q-pF67a",
-                        callback: onSubmit
-                    });
-                    grecaptcha.render("capcha2", {
-                        sitekey: "6LfEtLUkAAAAAK9FnQxzJFARd4103A0Nc1DkWiIQ",
-                        callback: onSubmit
-                    });
-                    if (successfulRecaptchas.length > 0) {
-                        console.log("succsess");
-                        this.removeError(formRequiredItem);
-                    } else {
+                    var token = grecaptcha.getResponse();
+                    console.log(token);
+                    if (0 == token.length) {
                         console.log("error");
                         this.addError(formRequiredItem);
                         error++;
+                    } else {
+                        console.log("succsess");
+                        this.removeError(formRequiredItem);
+                    }
+                } else if ("capcha1" === formRequiredItem.dataset.required) {
+                    token = grecaptcha.getResponse();
+                    console.log(token);
+                    if (0 == token.length) {
+                        console.log("error");
+                        this.addError(formRequiredItem);
+                        error++;
+                    } else {
+                        console.log("succsess");
+                        this.removeError(formRequiredItem);
                     }
                 } else if ("phonemail" === formRequiredItem.dataset.required) {
                     formRequiredItem.value = formRequiredItem.value.replace(" ", "");

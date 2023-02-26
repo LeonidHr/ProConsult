@@ -1192,6 +1192,7 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1.25rem;
   font-weight: 500;
   line-height: 123.076923%;
   /* 32/26 */
@@ -1212,10 +1213,10 @@ body::after {
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 1.9375rem;
-          flex: 0 0 1.9375rem;
-  height: 1.9375rem;
-  width: 1.9375rem;
+      -ms-flex: 0 0 1.5625rem;
+          flex: 0 0 1.5625rem;
+  height: 1.5625rem;
+  width: 1.5625rem;
   border-radius: 50%;
   border: 2px solid #FFFFFF;
 }
@@ -2179,10 +2180,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
   .bottom-popup-form__link {
     font-size: 1.5625rem;
   }
-
-  .mainscreen__btn-main {
-    font-size: 1.625rem;
-  }
 }
 
 @media (min-width: 47.99875em) {
@@ -2492,6 +2489,10 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
   .menu__link {
     font-size: 1rem;
   }
+
+  .mainscreen__btn-main {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 62em) {
@@ -2662,10 +2663,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 
   .mainscreen__btn-main {
     padding-left: 2.5rem;
-  }
-
-  .mainscreen__btn-main {
-    gap: 1.875rem;
   }
 
   .consultations__top {
@@ -2906,6 +2903,10 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
     width: 30rem;
   }
 
+  .mainscreen__btn-main {
+    font-size: 0.875rem;
+  }
+
   .consultations__container {
     padding-right: 1.25rem;
   }
@@ -2985,10 +2986,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
   .bottom-popup-form__link {
     font-size: 1.1875rem;
   }
-
-  .mainscreen__btn-main {
-    font-size: 1.125rem;
-  }
 }
 
 @media (max-width: 20em) {
@@ -3054,10 +3051,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 
   .mainscreen__btn-main {
     padding-left: 1.875rem;
-  }
-
-  .mainscreen__btn-main {
-    gap: 1.25rem;
   }
 
   .consultations__top {
@@ -4111,18 +4104,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
     }
 }
 
-@supports (gap: clamp( 1.25rem , 1.0416666667rem  +  1.0416666667vw , 1.875rem )) {
-    .mainscreen__btn-main {
-      gap: clamp( 1.25rem , 1.0416666667rem  +  1.0416666667vw , 1.875rem );
-    }
-}
-
-@supports not (gap: clamp( 1.25rem , 1.0416666667rem  +  1.0416666667vw , 1.875rem )) {
-    .mainscreen__btn-main {
-      gap: calc(1.25rem + 0.625 * (100vw - 20rem) / 60);
-    }
-}
-
 @supports (margin-bottom: clamp( 1.0625rem , 0.8958333333rem  +  0.8333333333vw , 1.5625rem )) {
     .consultations__top {
       margin-bottom: clamp( 1.0625rem , 0.8958333333rem  +  0.8333333333vw , 1.5625rem );
@@ -4428,18 +4409,6 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
       font-size: calc(1.1875rem + 0.375 * (100vw - 30rem) / 17.9375);
     }
 }
-
-@supports (font-size: clamp( 1.125rem , 0.2887630662rem  +  2.787456446vw , 1.625rem )) {
-    .mainscreen__btn-main {
-      font-size: clamp( 1.125rem , 0.2887630662rem  +  2.787456446vw , 1.625rem );
-    }
-}
-
-@supports not (font-size: clamp( 1.125rem , 0.2887630662rem  +  2.787456446vw , 1.625rem )) {
-    .mainscreen__btn-main {
-      font-size: calc(1.125rem + 0.5 * (100vw - 30rem) / 17.9375);
-    }
-}
 }
 
 @media (min-width: 47.9375em) and (max-width: 120em) {
@@ -4561,6 +4530,18 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 
 @supports not (font-size: clamp( 0.875rem , 0.6309055118rem  +  0.3937007874vw , 1rem )) {
     .menu__link {
+      font-size: calc(0.875rem + 0.125 * (100vw - 62rem) / 31.75);
+    }
+}
+
+@supports (font-size: clamp( 0.875rem , 0.6309055118rem  +  0.3937007874vw , 1rem )) {
+    .mainscreen__btn-main {
+      font-size: clamp( 0.875rem , 0.6309055118rem  +  0.3937007874vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.6309055118rem  +  0.3937007874vw , 1rem )) {
+    .mainscreen__btn-main {
       font-size: calc(0.875rem + 0.125 * (100vw - 62rem) / 31.75);
     }
 }

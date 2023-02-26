@@ -924,6 +924,16 @@
                         console.log("succsess");
                         this.removeError(formRequiredItem);
                     }
+                } else if ("capcha1" === formRequiredItem.dataset.required) {
+                    token = grecaptcha.getResponse();
+                    if (0 == token.length) {
+                        console.log("error");
+                        this.addError(formRequiredItem);
+                        error++;
+                    } else {
+                        console.log("succsess");
+                        this.removeError(formRequiredItem);
+                    }
                 } else if ("phonemail" === formRequiredItem.dataset.required) {
                     formRequiredItem.value = formRequiredItem.value.replace(" ", "");
                     if (this.isNumber(formRequiredItem) && this.emailTest(formRequiredItem)) {

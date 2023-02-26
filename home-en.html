@@ -12,11 +12,11 @@
 	<meta name="twitter:title" content="ProConsult">
 	<meta name="twitter:description" content="Pro Consult - консультации специалистов для решения ваших повседневных задач.">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230226135417">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230226140220">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230226135417" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&_v=20230226140220" rel="stylesheet">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -719,13 +719,7 @@
 										<button class="form-popup__btn button button_turquoise form-feedback__btn" type="submit">Send</button>
 									</div>
 									<div class="checkbox form-feedback__checkbox">
-										<input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
-										<label for="c_1" class="checkbox__label checkbox__label_w">
-											<img src="img/icons/check-w.svg" alt="I agree to the processing of personal data">
-											<span class="checkbox__text">
-												I agree with personal data processing.
-											</span>
-										</label>
+										<div data-required="capcha" data-error="Пройдите reCAPCHA" class="g-recaptcha" data-sitekey="6LfEtLUkAAAAAK9FnQxzJFARd4103A0Nc1DkWiIQ"></div>
 									</div>
 								</form>
 							</div>
@@ -901,17 +895,10 @@
 						</div>
 						<div class="form-popup__row">
 							<div class="checkbox form-popup__checkbox">
-								<!-- <input checked id="c_1" data-required data-error="Отметьте это поле" class="checkbox__input" type="checkbox" value="1" name="form[agree]">
-							<label for="c_1" class="checkbox__label">
-								<img src="img/icons/check.svg" alt="I agree with personal data processing.">
-								<span class="checkbox__text">
-									I agree with personal data processing. 
-								</span>
-							</label> -->
-								<div class="g-recaptcha" data-sitekey="6LdebbUkAAAAAHDRtFdhbvRqYHD8ayVYoEotAlWk">
-								</div>
-								<button class="form-popup__btn button" type="submit">Send</button>
+								<div data-required="capcha" data-error="Пройдите reCAPCHA" class="g-recaptcha" data-sitekey="6LfEtLUkAAAAAK9FnQxzJFARd4103A0Nc1DkWiIQ"></div>
 							</div>
+							<button class="form-popup__btn button" type="submit">Send</button>
+						</div>
 					</form>
 					<div class="popup-form__bottom bottom-popup-form">
 						<p class="bottom-popup-form__text">Also are possible to contact with us by phone.</p>
@@ -926,14 +913,9 @@
 		</div>
 	</div>
 
-	<script src="js/app.min.js?_v=20230226135417"></script>
-	<script src="https://www.google.com/recaptcha/api.js?_v=20230226135417"></script>
+	<script src="js/app.min.js?_v=20230226140220"></script>
+	<script src="https://www.google.com/recaptcha/api.js?_v=20230226140220"></script>
 
-	<!-- <script>
-  function onSubmit(token) {
-    document.getElementById("demo-form").submit();
-  }
-</script> -->
 </body>
 
 </html>
